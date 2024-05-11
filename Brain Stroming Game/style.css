@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    background-color: var(--bg-main);
+}
+:root{
+    --bg-main:#464646;
+    --bg-card:#2D2727;
+    --border-color:#efc745;
+
+}
+h1{
+    color: #fff;
+    font-size: 4rem;
+}
+span{
+    color: var(--border-color);
+}
+#card_section{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 2rem;
+}
+/* .card{
+    width: 8rem;
+    height: 8rem;
+    background-color: var(--bg-card);
+    background-size: contain;
+    border-radius: .6rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    padding: 2rem;
+    
+    background-size: cover;
+    background-position: center;
+} */
+/* 
+.card_selected{
+    border: 2px solid var(--border-color);
+}
+
+.card_match{
+    border: .2rem solid rgb(12, 218, 50);
+} */
+
+.card{
+    position: relative;
+    transition: all .4s linear;
+    transform-style: preserve-3d;
+    /* padding: 2rem; */
+    
+}
+.card,.back_card,.front_card{
+    height: 8rem;
+    width: 8rem;
+}
+
+.back_card,.front_card{
+    position: absolute;
+    backface-visibility: hidden;
+
+}
+.front_card{
+    background-color: var(--border-color);
+    background-size: contain;
+    border-radius: .6rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    padding: 2rem;
+}
+.back_card{
+    transform: rotateY(180deg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    padding: 2rem;
+    border-radius: .6rem;
+}
+.card_selected{
+    transform: rotateY(180deg); 
+}
+.card_match .front_card{
+    background-color: var(--bg-card);
+}
+
